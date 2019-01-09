@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace ProjetIntegrationInformatique
 {
     static class Program
     {
+        public static String utilisateur;
+        public static bool loginOk = false;
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -16,7 +18,11 @@ namespace WindowsFormsApp1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
+            if (loginOk)
+            {
+                Application.Run(new MainForm(utilisateur));
+            }
         }
     }
 }
