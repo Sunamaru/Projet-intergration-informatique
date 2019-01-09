@@ -12,14 +12,14 @@ namespace ProjetIntegrationInformatique
 {
     public partial class MainForm : Form
     {
-        public MainForm(String utilisateur)
+        public MainForm()
         {
             InitializeComponent();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            this.Text = "Supervisator 2001 - " + Program.Data.utilisateur;
         }
     }
 }

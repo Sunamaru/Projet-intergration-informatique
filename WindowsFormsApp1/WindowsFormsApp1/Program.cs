@@ -8,8 +8,11 @@ namespace ProjetIntegrationInformatique
 {
     static class Program
     {
-        public static String utilisateur;
-        public static bool loginOk = false;
+        public static class Data
+        {
+            public static String utilisateur;
+            public static bool loginOk = false;
+        }     
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -19,9 +22,9 @@ namespace ProjetIntegrationInformatique
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new LoginForm());
-            if (loginOk)
+            if (Data.loginOk)
             {
-                Application.Run(new MainForm(utilisateur));
+                Application.Run(new MainForm());
             }
         }
     }
