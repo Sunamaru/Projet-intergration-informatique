@@ -8,11 +8,6 @@ namespace ProjetIntegrationInformatique
 {
     static class Program
     {
-        public static class Data
-        {
-            public static String utilisateur;
-            public static bool loginOk = false;
-        }     
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>

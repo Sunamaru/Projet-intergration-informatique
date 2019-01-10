@@ -101,8 +101,8 @@ namespace ProjetIntegrationInformatique
 
         private void goLogin(string user)
         {
-            Program.Data.utilisateur = user;
-            Program.Data.loginOk = true;
+            Data.utilisateur = user;
+            Data.loginOk = true;
             this.Close();
         }
 
