@@ -108,6 +108,7 @@ namespace ProjetIntegrationInformatique
 
                 DiskScan(Data.AccesPC1, Data.AccesPC2, Data.AccesPC3);
                 RamScan(Data.AccesPC1, Data.AccesPC2, Data.AccesPC3);
+                CpuScan(Data.AccesPC1, Data.AccesPC2, Data.AccesPC3);
             }
 
             else if (Data.page == 2)
@@ -237,6 +238,12 @@ namespace ProjetIntegrationInformatique
                     Data.ram1size = Data.memory1size.ToString() +" GB";
                     labelRam1Size.Text = Data.ram1size;
                 }
+                var allUsedMemory1 = Session1.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PerfFormattedData_PerfOS_Memory");
+                foreach (CimInstance oneUsedMemory1 in allUsedMemory1)
+                {
+                    Data.ram1percent = String.Format("{0}", oneUsedMemory1.CimInstanceProperties["PercentCommittedBytesInUse"].Value);
+                }
+                labelRam1Used.Text = Data.ram1percent + "%";
             }
 
             if (PC2)
@@ -251,6 +258,12 @@ namespace ProjetIntegrationInformatique
                     Data.ram2size = Data.memory2size.ToString() + " GB";
                     labelRam2Size.Text = Data.ram2size;
                 }
+                var allUsedMemory2 = Session2.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PerfFormattedData_PerfOS_Memory");
+                foreach (CimInstance oneUsedMemory2 in allUsedMemory2)
+                {
+                    Data.ram2Percent = String.Format("{0}", oneUsedMemory2.CimInstanceProperties["PercentCommittedBytesInUse"].Value);
+                }
+                labelRam2Used.Text = Data.ram2Percent + "%";
             }
 
             if (PC3)
@@ -265,7 +278,18 @@ namespace ProjetIntegrationInformatique
                     Data.ram3size = Data.memory3size.ToString() + " GB";
                     labelRam3Size.Text = Data.ram3size;
                 }
+                var allUsedMemory3 = Session3.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PerfFormattedData_PerfOS_Memory");
+                foreach (CimInstance oneUsedMemory3 in allUsedMemory3)
+                {
+                    Data.ram3percent = String.Format("{0}", oneUsedMemory3.CimInstanceProperties["PercentCommittedBytesInUse"].Value);
+                }
+                labelRam3Used.Text = Data.ram3percent + "%";
             }
+        }
+
+        private void CpuScan(bool PC1, bool PC2, bool PC3)
+        {
+
         }
 
         private void buttonLog1_Click(object sender, EventArgs e)
@@ -337,6 +361,11 @@ namespace ProjetIntegrationInformatique
         private void ButtonProfils_Click(object sender, EventArgs e)
         {
             Data.page = 3;
+            UpdateIHM();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
             UpdateIHM();
         }
     }
