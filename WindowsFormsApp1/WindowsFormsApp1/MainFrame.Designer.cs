@@ -43,7 +43,19 @@
             this.labelDisk1Used = new System.Windows.Forms.Label();
             this.BarDD1 = new System.Windows.Forms.ProgressBar();
             this.groupPC2 = new System.Windows.Forms.GroupBox();
+            this.labelDisk2Used = new System.Windows.Forms.Label();
+            this.BarDD2 = new System.Windows.Forms.ProgressBar();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelDisk2Remain = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.labelDisk2Total = new System.Windows.Forms.Label();
             this.groupPC3 = new System.Windows.Forms.GroupBox();
+            this.labelDisk3Used = new System.Windows.Forms.Label();
+            this.BarDD3 = new System.Windows.Forms.ProgressBar();
+            this.label9 = new System.Windows.Forms.Label();
+            this.labelDisk3Remain = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.labelDisk3Total = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.ButtonEquipement = new System.Windows.Forms.ToolStripButton();
             this.ButtonTickets = new System.Windows.Forms.ToolStripButton();
@@ -52,18 +64,12 @@
             this.groupTicketEnCours = new System.Windows.Forms.GroupBox();
             this.groupTicketsResolues = new System.Windows.Forms.GroupBox();
             this.groupProfils = new System.Windows.Forms.GroupBox();
-            this.labelDisk2Used = new System.Windows.Forms.Label();
-            this.BarDD2 = new System.Windows.Forms.ProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelDisk2Remain = new System.Windows.Forms.Label();
-            this.labelDisk2Total = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.labelDisk3Used = new System.Windows.Forms.Label();
-            this.BarDD3 = new System.Windows.Forms.ProgressBar();
-            this.label9 = new System.Windows.Forms.Label();
-            this.labelDisk3Remain = new System.Windows.Forms.Label();
-            this.labelDisk3Total = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.labelRam1Size = new System.Windows.Forms.Label();
+            this.labelRam2Size = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelRam3Size = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.groupPC1.SuspendLayout();
             this.groupPC2.SuspendLayout();
             this.groupPC3.SuspendLayout();
@@ -171,6 +177,8 @@
             // 
             // groupPC1
             // 
+            this.groupPC1.Controls.Add(this.labelRam1Size);
+            this.groupPC1.Controls.Add(this.label2);
             this.groupPC1.Controls.Add(this.labelDisk1Used);
             this.groupPC1.Controls.Add(this.BarDD1);
             this.groupPC1.Controls.Add(this.label1);
@@ -204,7 +212,9 @@
             // 
             // groupPC2
             // 
+            this.groupPC2.Controls.Add(this.labelRam2Size);
             this.groupPC2.Controls.Add(this.labelDisk2Used);
+            this.groupPC2.Controls.Add(this.label6);
             this.groupPC2.Controls.Add(this.buttonLog2);
             this.groupPC2.Controls.Add(this.BarDD2);
             this.groupPC2.Controls.Add(this.labelError2);
@@ -219,9 +229,63 @@
             this.groupPC2.TabStop = false;
             this.groupPC2.Text = "PC2";
             // 
+            // labelDisk2Used
+            // 
+            this.labelDisk2Used.AutoSize = true;
+            this.labelDisk2Used.Location = new System.Drawing.Point(6, 82);
+            this.labelDisk2Used.Name = "labelDisk2Used";
+            this.labelDisk2Used.Size = new System.Drawing.Size(108, 13);
+            this.labelDisk2Used.TabIndex = 18;
+            this.labelDisk2Used.Text = "Espace occupé (-%) :";
+            // 
+            // BarDD2
+            // 
+            this.BarDD2.Location = new System.Drawing.Point(129, 82);
+            this.BarDD2.Name = "BarDD2";
+            this.BarDD2.Size = new System.Drawing.Size(165, 20);
+            this.BarDD2.TabIndex = 17;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Espace total :";
+            // 
+            // labelDisk2Remain
+            // 
+            this.labelDisk2Remain.AutoSize = true;
+            this.labelDisk2Remain.Location = new System.Drawing.Point(88, 60);
+            this.labelDisk2Remain.Name = "labelDisk2Remain";
+            this.labelDisk2Remain.Size = new System.Drawing.Size(10, 13);
+            this.labelDisk2Remain.TabIndex = 16;
+            this.labelDisk2Remain.Text = "-";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 60);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Espace libre :";
+            // 
+            // labelDisk2Total
+            // 
+            this.labelDisk2Total.AutoSize = true;
+            this.labelDisk2Total.Location = new System.Drawing.Point(88, 36);
+            this.labelDisk2Total.Name = "labelDisk2Total";
+            this.labelDisk2Total.Size = new System.Drawing.Size(10, 13);
+            this.labelDisk2Total.TabIndex = 14;
+            this.labelDisk2Total.Text = "-";
+            // 
             // groupPC3
             // 
+            this.groupPC3.Controls.Add(this.labelRam3Size);
             this.groupPC3.Controls.Add(this.labelDisk3Used);
+            this.groupPC3.Controls.Add(this.label10);
             this.groupPC3.Controls.Add(this.buttonLog3);
             this.groupPC3.Controls.Add(this.BarDD3);
             this.groupPC3.Controls.Add(this.labelError3);
@@ -235,6 +299,58 @@
             this.groupPC3.TabIndex = 12;
             this.groupPC3.TabStop = false;
             this.groupPC3.Text = "PC3";
+            // 
+            // labelDisk3Used
+            // 
+            this.labelDisk3Used.AutoSize = true;
+            this.labelDisk3Used.Location = new System.Drawing.Point(6, 82);
+            this.labelDisk3Used.Name = "labelDisk3Used";
+            this.labelDisk3Used.Size = new System.Drawing.Size(108, 13);
+            this.labelDisk3Used.TabIndex = 24;
+            this.labelDisk3Used.Text = "Espace occupé (-%) :";
+            // 
+            // BarDD3
+            // 
+            this.BarDD3.Location = new System.Drawing.Point(129, 82);
+            this.BarDD3.Name = "BarDD3";
+            this.BarDD3.Size = new System.Drawing.Size(165, 20);
+            this.BarDD3.TabIndex = 23;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 36);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Espace total :";
+            // 
+            // labelDisk3Remain
+            // 
+            this.labelDisk3Remain.AutoSize = true;
+            this.labelDisk3Remain.Location = new System.Drawing.Point(88, 60);
+            this.labelDisk3Remain.Name = "labelDisk3Remain";
+            this.labelDisk3Remain.Size = new System.Drawing.Size(10, 13);
+            this.labelDisk3Remain.TabIndex = 22;
+            this.labelDisk3Remain.Text = "-";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 60);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(71, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Espace libre :";
+            // 
+            // labelDisk3Total
+            // 
+            this.labelDisk3Total.AutoSize = true;
+            this.labelDisk3Total.Location = new System.Drawing.Point(88, 36);
+            this.labelDisk3Total.Name = "labelDisk3Total";
+            this.labelDisk3Total.Size = new System.Drawing.Size(10, 13);
+            this.labelDisk3Total.TabIndex = 20;
+            this.labelDisk3Total.Text = "-";
             // 
             // toolStrip1
             // 
@@ -315,109 +431,59 @@
             this.groupProfils.TabStop = false;
             this.groupProfils.Text = "Profils";
             // 
-            // labelDisk2Used
+            // label2
             // 
-            this.labelDisk2Used.AutoSize = true;
-            this.labelDisk2Used.Location = new System.Drawing.Point(6, 82);
-            this.labelDisk2Used.Name = "labelDisk2Used";
-            this.labelDisk2Used.Size = new System.Drawing.Size(108, 13);
-            this.labelDisk2Used.TabIndex = 18;
-            this.labelDisk2Used.Text = "Espace occupé (-%) :";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 116);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "RAM installée :";
             // 
-            // BarDD2
+            // labelRam1Size
             // 
-            this.BarDD2.Location = new System.Drawing.Point(129, 82);
-            this.BarDD2.Name = "BarDD2";
-            this.BarDD2.Size = new System.Drawing.Size(165, 20);
-            this.BarDD2.TabIndex = 17;
+            this.labelRam1Size.AutoSize = true;
+            this.labelRam1Size.Location = new System.Drawing.Point(88, 116);
+            this.labelRam1Size.Name = "labelRam1Size";
+            this.labelRam1Size.Size = new System.Drawing.Size(10, 13);
+            this.labelRam1Size.TabIndex = 14;
+            this.labelRam1Size.Text = "-";
             // 
-            // label3
+            // labelRam2Size
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Espace total :";
+            this.labelRam2Size.AutoSize = true;
+            this.labelRam2Size.Location = new System.Drawing.Point(88, 116);
+            this.labelRam2Size.Name = "labelRam2Size";
+            this.labelRam2Size.Size = new System.Drawing.Size(10, 13);
+            this.labelRam2Size.TabIndex = 16;
+            this.labelRam2Size.Text = "-";
             // 
-            // labelDisk2Remain
+            // label6
             // 
-            this.labelDisk2Remain.AutoSize = true;
-            this.labelDisk2Remain.Location = new System.Drawing.Point(88, 60);
-            this.labelDisk2Remain.Name = "labelDisk2Remain";
-            this.labelDisk2Remain.Size = new System.Drawing.Size(10, 13);
-            this.labelDisk2Remain.TabIndex = 16;
-            this.labelDisk2Remain.Text = "-";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 116);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(78, 13);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "RAM installée :";
             // 
-            // labelDisk2Total
+            // labelRam3Size
             // 
-            this.labelDisk2Total.AutoSize = true;
-            this.labelDisk2Total.Location = new System.Drawing.Point(88, 36);
-            this.labelDisk2Total.Name = "labelDisk2Total";
-            this.labelDisk2Total.Size = new System.Drawing.Size(10, 13);
-            this.labelDisk2Total.TabIndex = 14;
-            this.labelDisk2Total.Text = "-";
+            this.labelRam3Size.AutoSize = true;
+            this.labelRam3Size.Location = new System.Drawing.Point(88, 116);
+            this.labelRam3Size.Name = "labelRam3Size";
+            this.labelRam3Size.Size = new System.Drawing.Size(10, 13);
+            this.labelRam3Size.TabIndex = 20;
+            this.labelRam3Size.Text = "-";
             // 
-            // label7
+            // label10
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Espace libre :";
-            // 
-            // labelDisk3Used
-            // 
-            this.labelDisk3Used.AutoSize = true;
-            this.labelDisk3Used.Location = new System.Drawing.Point(6, 82);
-            this.labelDisk3Used.Name = "labelDisk3Used";
-            this.labelDisk3Used.Size = new System.Drawing.Size(108, 13);
-            this.labelDisk3Used.TabIndex = 24;
-            this.labelDisk3Used.Text = "Espace occupé (-%) :";
-            // 
-            // BarDD3
-            // 
-            this.BarDD3.Location = new System.Drawing.Point(129, 82);
-            this.BarDD3.Name = "BarDD3";
-            this.BarDD3.Size = new System.Drawing.Size(165, 20);
-            this.BarDD3.TabIndex = 23;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 36);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Espace total :";
-            // 
-            // labelDisk3Remain
-            // 
-            this.labelDisk3Remain.AutoSize = true;
-            this.labelDisk3Remain.Location = new System.Drawing.Point(88, 60);
-            this.labelDisk3Remain.Name = "labelDisk3Remain";
-            this.labelDisk3Remain.Size = new System.Drawing.Size(10, 13);
-            this.labelDisk3Remain.TabIndex = 22;
-            this.labelDisk3Remain.Text = "-";
-            // 
-            // labelDisk3Total
-            // 
-            this.labelDisk3Total.AutoSize = true;
-            this.labelDisk3Total.Location = new System.Drawing.Point(88, 36);
-            this.labelDisk3Total.Name = "labelDisk3Total";
-            this.labelDisk3Total.Size = new System.Drawing.Size(10, 13);
-            this.labelDisk3Total.TabIndex = 20;
-            this.labelDisk3Total.Text = "-";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(6, 60);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(71, 13);
-            this.label12.TabIndex = 21;
-            this.label12.Text = "Espace libre :";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 116);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "RAM installée :";
             // 
             // MainForm
             // 
@@ -486,5 +552,11 @@
         private System.Windows.Forms.Label labelDisk3Remain;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label labelDisk3Total;
+        private System.Windows.Forms.Label labelRam1Size;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelRam2Size;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelRam3Size;
+        private System.Windows.Forms.Label label10;
     }
 }

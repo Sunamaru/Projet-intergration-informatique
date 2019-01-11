@@ -105,7 +105,9 @@ namespace ProjetIntegrationInformatique
                 groupTicketSoumis.Visible = false;
                 groupTicketsResolues.Visible = false;
                 groupProfils.Visible = false;
+
                 DiskScan(Data.AccesPC1, Data.AccesPC2, Data.AccesPC3);
+                RamScan(Data.AccesPC1, Data.AccesPC2, Data.AccesPC3);
             }
 
             else if (Data.page == 2)
@@ -209,6 +211,60 @@ namespace ProjetIntegrationInformatique
                 labelDisk3Remain.Text = Data.disk3remain;
                 labelDisk3Total.Text = Data.disk3size;
                 labelDisk3Used.Text = "Espace occupé (" + (Math.Round(((Data.DD3size - Data.DD3remain) / Data.DD3size), 2) * 100) + "%) :";
+            }
+        }
+
+        private void RamScan(bool PC1, bool PC2, bool PC3)
+        {
+            var password = new SecureString();
+            foreach (char c in Data.rudepassword)
+            {
+                password.AppendChar(c);
+            }
+            CimCredential Credentials = new CimCredential(PasswordAuthenticationMechanism.Default, Data.domain, Data.username, password);
+
+            WSManSessionOptions SessionOptions = new WSManSessionOptions();
+            SessionOptions.AddDestinationCredentials(Credentials);
+            if (PC1)
+            {
+                CimSession Session1 = CimSession.Create(Data.computer1, SessionOptions);
+                var allMemory1 = Session1.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PhysicalMemory");
+                Data.memory1size = 0;
+                foreach (CimInstance oneMemory1 in allMemory1)
+                {
+                    Data.ram1size = String.Format("{0}", oneMemory1.CimInstanceProperties["Capacity"].Value);
+                    Data.memory1size += Math.Round(Convert.ToDouble(Data.ram1size) / 1073741824, 2);
+                    Data.ram1size = Data.memory1size.ToString() +" GB";
+                    labelRam1Size.Text = Data.ram1size;
+                }
+            }
+
+            if (PC2)
+            {
+                CimSession Session2 = CimSession.Create(Data.computer2, SessionOptions);
+                var allMemory2 = Session2.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PhysicalMemory");
+                Data.memory2size = 0;
+                foreach (CimInstance oneMemory2 in allMemory2)
+                {
+                    Data.ram2size = String.Format("{0}", oneMemory2.CimInstanceProperties["Capacity"].Value);
+                    Data.memory2size += Math.Round(Convert.ToDouble(Data.ram2size) / 1073741824, 2);
+                    Data.ram2size = Data.memory2size.ToString() + " GB";
+                    labelRam2Size.Text = Data.ram2size;
+                }
+            }
+
+            if (PC3)
+            {
+                CimSession Session3 = CimSession.Create(Data.computer3, SessionOptions);
+                var allMemory3 = Session3.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PhysicalMemory");
+                Data.memory3size = 0;
+                foreach (CimInstance oneMemory3 in allMemory3)
+                {
+                    Data.ram3size = String.Format("{0}", oneMemory3.CimInstanceProperties["Capacity"].Value);
+                    Data.memory3size += Math.Round(Convert.ToDouble(Data.ram3size) / 1073741824, 2);
+                    Data.ram3size = Data.memory3size.ToString() + " GB";
+                    labelRam3Size.Text = Data.ram3size;
+                }
             }
         }
 
