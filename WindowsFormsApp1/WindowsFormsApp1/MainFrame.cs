@@ -241,9 +241,10 @@ namespace ProjetIntegrationInformatique
                 var allUsedMemory1 = Session1.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PerfFormattedData_PerfOS_Memory");
                 foreach (CimInstance oneUsedMemory1 in allUsedMemory1)
                 {
-                    Data.ram1percent = String.Format("{0}", oneUsedMemory1.CimInstanceProperties["PercentCommittedBytesInUse"].Value);
+                    Int32.TryParse(String.Format("{0}", oneUsedMemory1.CimInstanceProperties["PercentCommittedBytesInUse"].Value), out Data.ram1percent);
                 }
                 labelRam1Used.Text = Data.ram1percent + "%";
+                BarRAM1.Value = Data.ram1percent;
             }
 
             if (PC2)
@@ -261,9 +262,10 @@ namespace ProjetIntegrationInformatique
                 var allUsedMemory2 = Session2.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PerfFormattedData_PerfOS_Memory");
                 foreach (CimInstance oneUsedMemory2 in allUsedMemory2)
                 {
-                    Data.ram2Percent = String.Format("{0}", oneUsedMemory2.CimInstanceProperties["PercentCommittedBytesInUse"].Value);
+                    Int32.TryParse(String.Format("{0}", oneUsedMemory2.CimInstanceProperties["PercentCommittedBytesInUse"].Value), out Data.ram2percent);
                 }
-                labelRam2Used.Text = Data.ram2Percent + "%";
+                labelRam2Used.Text = Data.ram2percent + "%";
+                BarRAM2.Value = Data.ram2percent;
             }
 
             if (PC3)
@@ -281,15 +283,59 @@ namespace ProjetIntegrationInformatique
                 var allUsedMemory3 = Session3.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PerfFormattedData_PerfOS_Memory");
                 foreach (CimInstance oneUsedMemory3 in allUsedMemory3)
                 {
-                    Data.ram3percent = String.Format("{0}", oneUsedMemory3.CimInstanceProperties["PercentCommittedBytesInUse"].Value);
+                    Int32.TryParse(String.Format("{0}", oneUsedMemory3.CimInstanceProperties["PercentCommittedBytesInUse"].Value), out Data.ram3percent);
                 }
                 labelRam3Used.Text = Data.ram3percent + "%";
+                BarRAM3.Value = Data.ram3percent;
             }
         }
 
         private void CpuScan(bool PC1, bool PC2, bool PC3)
         {
+            var password = new SecureString();
+            foreach (char c in Data.rudepassword)
+            {
+                password.AppendChar(c);
+            }
+            CimCredential Credentials = new CimCredential(PasswordAuthenticationMechanism.Default, Data.domain, Data.username, password);
 
+            WSManSessionOptions SessionOptions = new WSManSessionOptions();
+            SessionOptions.AddDestinationCredentials(Credentials);
+            if (PC1)
+            {
+                CimSession Session1 = CimSession.Create(Data.computer1, SessionOptions);
+                var allUsedCore1 = Session1.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PerfFormattedData_PerfOS_Processor");
+                foreach (CimInstance oneUsedCore1 in allUsedCore1)
+                {
+                    Int32.TryParse(String.Format("{0}", oneUsedCore1.CimInstanceProperties["PercentProcessorTime"].Value), out Data.cpu1percent);
+                }
+                labelCpu1Used.Text = Data.cpu1percent + "%";
+                BarCPU1.Value = Data.cpu1percent;
+            }
+
+            if (PC2)
+            {
+                CimSession Session2 = CimSession.Create(Data.computer2, SessionOptions);
+                var allUsedCore2 = Session2.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PerfFormattedData_PerfOS_Processor");
+                foreach (CimInstance oneUsedCore2 in allUsedCore2)
+                {
+                    Int32.TryParse(String.Format("{0}", oneUsedCore2.CimInstanceProperties["PercentProcessorTime"].Value), out Data.cpu2percent);
+                }
+                labelCpu2Used.Text = Data.cpu2percent + "%";
+                BarCPU2.Value = Data.cpu2percent;
+            }
+
+            if (PC3)
+            {
+                CimSession Session3 = CimSession.Create(Data.computer3, SessionOptions);
+                var allUsedCore3 = Session3.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_PerfFormattedData_PerfOS_Processor");
+                foreach (CimInstance oneUsedCore3 in allUsedCore3)
+                {
+                     Int32.TryParse(String.Format("{0}", oneUsedCore3.CimInstanceProperties["PercentProcessorTime"].Value), out Data.cpu3percent);
+                }
+                labelCpu3Used.Text = Data.cpu3percent + "%";
+                BarCPU3.Value = Data.cpu3percent;
+            }
         }
 
         private void buttonLog1_Click(object sender, EventArgs e)

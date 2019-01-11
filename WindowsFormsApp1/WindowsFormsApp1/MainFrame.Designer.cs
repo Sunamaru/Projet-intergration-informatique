@@ -78,6 +78,18 @@
             this.labelRam3Used = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.labelCpu1Used = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.labelCpu2Used = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.labelCpu3Used = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.BarRAM1 = new System.Windows.Forms.ProgressBar();
+            this.BarCPU1 = new System.Windows.Forms.ProgressBar();
+            this.BarRAM2 = new System.Windows.Forms.ProgressBar();
+            this.BarCPU2 = new System.Windows.Forms.ProgressBar();
+            this.BarRAM3 = new System.Windows.Forms.ProgressBar();
+            this.BarCPU3 = new System.Windows.Forms.ProgressBar();
             this.groupPC1.SuspendLayout();
             this.groupPC2.SuspendLayout();
             this.groupPC3.SuspendLayout();
@@ -185,6 +197,10 @@
             // 
             // groupPC1
             // 
+            this.groupPC1.Controls.Add(this.BarCPU1);
+            this.groupPC1.Controls.Add(this.BarRAM1);
+            this.groupPC1.Controls.Add(this.labelCpu1Used);
+            this.groupPC1.Controls.Add(this.label13);
             this.groupPC1.Controls.Add(this.labelRam1Used);
             this.groupPC1.Controls.Add(this.label8);
             this.groupPC1.Controls.Add(this.labelRam1Size);
@@ -258,7 +274,11 @@
             // 
             // groupPC2
             // 
+            this.groupPC2.Controls.Add(this.BarCPU2);
+            this.groupPC2.Controls.Add(this.BarRAM2);
+            this.groupPC2.Controls.Add(this.labelCpu2Used);
             this.groupPC2.Controls.Add(this.labelRam2Used);
+            this.groupPC2.Controls.Add(this.label15);
             this.groupPC2.Controls.Add(this.labelRam2Size);
             this.groupPC2.Controls.Add(this.label11);
             this.groupPC2.Controls.Add(this.labelDisk2Used);
@@ -349,7 +369,11 @@
             // 
             // groupPC3
             // 
+            this.groupPC3.Controls.Add(this.BarCPU3);
+            this.groupPC3.Controls.Add(this.BarRAM3);
+            this.groupPC3.Controls.Add(this.labelCpu3Used);
             this.groupPC3.Controls.Add(this.labelRam3Used);
+            this.groupPC3.Controls.Add(this.label17);
             this.groupPC3.Controls.Add(this.labelRam3Size);
             this.groupPC3.Controls.Add(this.label14);
             this.groupPC3.Controls.Add(this.labelDisk3Used);
@@ -559,6 +583,102 @@
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // labelCpu1Used
+            // 
+            this.labelCpu1Used.AutoSize = true;
+            this.labelCpu1Used.Location = new System.Drawing.Point(88, 181);
+            this.labelCpu1Used.Name = "labelCpu1Used";
+            this.labelCpu1Used.Size = new System.Drawing.Size(10, 13);
+            this.labelCpu1Used.TabIndex = 18;
+            this.labelCpu1Used.Text = "-";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 181);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 13);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "CPU utilisée :";
+            // 
+            // labelCpu2Used
+            // 
+            this.labelCpu2Used.AutoSize = true;
+            this.labelCpu2Used.Location = new System.Drawing.Point(88, 181);
+            this.labelCpu2Used.Name = "labelCpu2Used";
+            this.labelCpu2Used.Size = new System.Drawing.Size(10, 13);
+            this.labelCpu2Used.TabIndex = 20;
+            this.labelCpu2Used.Text = "-";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 181);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 13);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "CPU utilisée :";
+            // 
+            // labelCpu3Used
+            // 
+            this.labelCpu3Used.AutoSize = true;
+            this.labelCpu3Used.Location = new System.Drawing.Point(88, 181);
+            this.labelCpu3Used.Name = "labelCpu3Used";
+            this.labelCpu3Used.Size = new System.Drawing.Size(10, 13);
+            this.labelCpu3Used.TabIndex = 22;
+            this.labelCpu3Used.Text = "-";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 181);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 13);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "CPU utilisée :";
+            // 
+            // BarRAM1
+            // 
+            this.BarRAM1.Location = new System.Drawing.Point(129, 132);
+            this.BarRAM1.Name = "BarRAM1";
+            this.BarRAM1.Size = new System.Drawing.Size(165, 20);
+            this.BarRAM1.TabIndex = 19;
+            // 
+            // BarCPU1
+            // 
+            this.BarCPU1.Location = new System.Drawing.Point(129, 174);
+            this.BarCPU1.Name = "BarCPU1";
+            this.BarCPU1.Size = new System.Drawing.Size(165, 20);
+            this.BarCPU1.TabIndex = 20;
+            // 
+            // BarRAM2
+            // 
+            this.BarRAM2.Location = new System.Drawing.Point(129, 132);
+            this.BarRAM2.Name = "BarRAM2";
+            this.BarRAM2.Size = new System.Drawing.Size(165, 20);
+            this.BarRAM2.TabIndex = 21;
+            // 
+            // BarCPU2
+            // 
+            this.BarCPU2.Location = new System.Drawing.Point(129, 174);
+            this.BarCPU2.Name = "BarCPU2";
+            this.BarCPU2.Size = new System.Drawing.Size(165, 20);
+            this.BarCPU2.TabIndex = 22;
+            // 
+            // BarRAM3
+            // 
+            this.BarRAM3.Location = new System.Drawing.Point(129, 132);
+            this.BarRAM3.Name = "BarRAM3";
+            this.BarRAM3.Size = new System.Drawing.Size(165, 20);
+            this.BarRAM3.TabIndex = 23;
+            // 
+            // BarCPU3
+            // 
+            this.BarCPU3.Location = new System.Drawing.Point(129, 174);
+            this.BarCPU3.Name = "BarCPU3";
+            this.BarCPU3.Size = new System.Drawing.Size(165, 20);
+            this.BarCPU3.TabIndex = 25;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -572,6 +692,7 @@
             this.Controls.Add(this.groupTicketEnCours);
             this.Controls.Add(this.groupTicketSoumis);
             this.Controls.Add(this.groupTicketsResolues);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Supervisator 2001";
@@ -639,5 +760,17 @@
         private System.Windows.Forms.Label labelRam3Used;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label labelCpu1Used;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label labelCpu2Used;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label labelCpu3Used;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ProgressBar BarCPU1;
+        private System.Windows.Forms.ProgressBar BarRAM1;
+        private System.Windows.Forms.ProgressBar BarCPU2;
+        private System.Windows.Forms.ProgressBar BarRAM2;
+        private System.Windows.Forms.ProgressBar BarCPU3;
+        private System.Windows.Forms.ProgressBar BarRAM3;
     }
 }

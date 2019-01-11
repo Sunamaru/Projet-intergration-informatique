@@ -36,7 +36,9 @@ namespace ProjetIntegrationInformatique
 
         public static string ram1size = "-";
         public static double memory1size = 0;
-        public static string ram1percent = "-";
+        public static int ram1percent = 0;
+
+        public static int cpu1percent = 0;
 
         public static string disk2size = "-";
         public static string disk2remain = "-";
@@ -45,7 +47,9 @@ namespace ProjetIntegrationInformatique
 
         public static string ram2size = "-";
         public static double memory2size = 0;
-        public static string ram2Percent = "-";
+        public static int ram2percent = 0;
+
+        public static int cpu2percent = 0;
 
         public static string disk3size = "-";
         public static string disk3remain = "-";
@@ -54,7 +58,9 @@ namespace ProjetIntegrationInformatique
 
         public static string ram3size = "-";
         public static double memory3size = 0;
-        public static string ram3percent = "-";
+        public static int ram3percent = 0;
+
+        public static int cpu3percent = 0;
 
         public static string rudepassword = "azerty123!";
 
