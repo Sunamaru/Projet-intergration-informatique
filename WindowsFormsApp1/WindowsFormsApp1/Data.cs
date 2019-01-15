@@ -11,9 +11,17 @@ namespace ProjetIntegrationInformatique
         public static String utilisateur;
         public static bool loginOk = false;
 
+        public static bool LoadPC1 = false;
+        public static bool LoadPC2 = false;
+        public static bool LoadPC3 = false;
+
         public static bool AccesPC1 = false;
         public static bool AccesPC2 = false;
         public static bool AccesPC3 = false;
+
+        public static bool PC1Online = false;
+        public static bool PC2Online = false;
+        public static bool PC3Online = false;
 
         public static bool AccesTech = false;
         public static bool AccesAdmin = false;
@@ -21,8 +29,11 @@ namespace ProjetIntegrationInformatique
         public static int page = 1;
 
         public static string LogsAdesse1 = "\\\\PC-TIMMY\\Users\\ttesteur\\Documents\\Supervisator2000\\logs.txt";
+        public static string IpPC1 = "192.168.4.9";
         public static string LogsAdesse2 = "\\\\PC-MICHEL\\Users\\msardou\\Documents\\Supervisator2000\\logs.txt";
+        public static string IpPC2 = "192.168.4.7";
         public static string LogsAdesse3 = "\\\\PC-ROBERT\\Users\\rredford\\Documents\\Supervisator2000\\logs.txt";
+        public static string IpPC3 = "192.168.4.8";
         public static string computer1 = "PC-Timmy";
         public static string computer2 = "PC-Michel";
         public static string computer3 = "PC-Robert";

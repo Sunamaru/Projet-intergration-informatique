@@ -98,7 +98,7 @@
             // 
             // buttonLog1
             // 
-            this.buttonLog1.Location = new System.Drawing.Point(93, 310);
+            this.buttonLog1.Location = new System.Drawing.Point(219, 317);
             this.buttonLog1.Name = "buttonLog1";
             this.buttonLog1.Size = new System.Drawing.Size(75, 23);
             this.buttonLog1.TabIndex = 0;
@@ -108,7 +108,7 @@
             // 
             // buttonLog3
             // 
-            this.buttonLog3.Location = new System.Drawing.Point(114, 310);
+            this.buttonLog3.Location = new System.Drawing.Point(216, 317);
             this.buttonLog3.Name = "buttonLog3";
             this.buttonLog3.Size = new System.Drawing.Size(75, 23);
             this.buttonLog3.TabIndex = 2;
@@ -118,7 +118,7 @@
             // 
             // buttonLog2
             // 
-            this.buttonLog2.Location = new System.Drawing.Point(110, 310);
+            this.buttonLog2.Location = new System.Drawing.Point(219, 317);
             this.buttonLog2.Name = "buttonLog2";
             this.buttonLog2.Size = new System.Drawing.Size(75, 23);
             this.buttonLog2.TabIndex = 3;
@@ -130,7 +130,7 @@
             // 
             this.labelError1.AutoSize = true;
             this.labelError1.ForeColor = System.Drawing.Color.Red;
-            this.labelError1.Location = new System.Drawing.Point(114, 336);
+            this.labelError1.Location = new System.Drawing.Point(240, 343);
             this.labelError1.Name = "labelError1";
             this.labelError1.Size = new System.Drawing.Size(29, 13);
             this.labelError1.TabIndex = 4;
@@ -141,7 +141,7 @@
             // 
             this.labelError2.AutoSize = true;
             this.labelError2.ForeColor = System.Drawing.Color.Red;
-            this.labelError2.Location = new System.Drawing.Point(134, 336);
+            this.labelError2.Location = new System.Drawing.Point(243, 343);
             this.labelError2.Name = "labelError2";
             this.labelError2.Size = new System.Drawing.Size(29, 13);
             this.labelError2.TabIndex = 5;
@@ -152,7 +152,7 @@
             // 
             this.labelError3.AutoSize = true;
             this.labelError3.ForeColor = System.Drawing.Color.Red;
-            this.labelError3.Location = new System.Drawing.Point(135, 336);
+            this.labelError3.Location = new System.Drawing.Point(240, 343);
             this.labelError3.Name = "labelError3";
             this.labelError3.Size = new System.Drawing.Size(29, 13);
             this.labelError3.TabIndex = 6;
@@ -683,7 +683,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 400);
+            this.ClientSize = new System.Drawing.Size(933, 408);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupPC2);
             this.Controls.Add(this.groupPC1);
