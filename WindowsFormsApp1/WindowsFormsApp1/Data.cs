@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using System.Runtime;
 
 namespace ProjetIntegrationInformatique
 {
@@ -75,5 +77,27 @@ namespace ProjetIntegrationInformatique
 
         public static string rudepassword = "azerty123!";
 
+        public static ticket[] listeticket = new ticket[1000];
+
+    }
+
+    [Serializable]
+    public class ticket
+    {
+        String contenue;
+        int PC;
+        int etat; //0 = nouveau; 1 = en cours ; 2 = fini;
+        DateTime datePoster;
+        int prioriter; //0 = n.c. ; 1 = basse ; 2 = moyenne ; 3 = haute 
+
+        public ticket(string contenue, int pC, int etat, DateTime datePoster, int prioriter)
+        {
+            this.contenue = contenue;
+            PC = pC;
+            this.etat = etat;
+            this.datePoster = datePoster;
+
+            this.prioriter = prioriter;
+        }
     }
 }

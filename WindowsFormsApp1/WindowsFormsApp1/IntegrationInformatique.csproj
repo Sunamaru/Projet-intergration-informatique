@@ -65,6 +65,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjoutTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AjoutTicket.Designer.cs">
+      <DependentUpon>AjoutTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -80,6 +86,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AjoutTicket.resx">
+      <DependentUpon>AjoutTicket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
       <SubType>Designer</SubType>

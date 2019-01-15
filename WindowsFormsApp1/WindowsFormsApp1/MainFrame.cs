@@ -601,5 +601,41 @@ namespace ProjetIntegrationInformatique
         {
             UpdateIHM();
         }
+
+        private void buttonTicket1_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            AjoutTicket askTicket = new AjoutTicket(1, Data.utilisateur);
+            if (askTicket.ShowDialog(this) == DialogResult.OK)
+            {
+                new ticket(askTicket.TextTicket.Text, 1, 0, DateTime.Now, 0);
+            }
+            askTicket.Dispose();
+            timer1.Start();
+        }
+
+        private void buttonTicket2_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            AjoutTicket askTicket = new AjoutTicket(2, Data.utilisateur);
+            if (askTicket.ShowDialog(this) == DialogResult.OK)
+            {
+                new ticket(askTicket.TextTicket.Text, 2, 0, DateTime.Now,0);
+            }
+            askTicket.Dispose();
+            timer1.Start();
+        }
+
+        private void buttonTicket3_Click(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            AjoutTicket askTicket = new AjoutTicket(3, Data.utilisateur);
+            if (askTicket.ShowDialog(this) == DialogResult.OK)
+            {
+                new ticket(askTicket.TextTicket.Text, 3, 0, DateTime.Now,0);
+            }
+            askTicket.Dispose();
+            timer1.Start();
+        }
     }
 }

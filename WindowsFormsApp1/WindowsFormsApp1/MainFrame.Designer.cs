@@ -41,6 +41,10 @@
             this.labelDisk1Remain = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupPC1 = new System.Windows.Forms.GroupBox();
+            this.BarCPU1 = new System.Windows.Forms.ProgressBar();
+            this.BarRAM1 = new System.Windows.Forms.ProgressBar();
+            this.labelCpu1Used = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.labelRam1Used = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.labelRam1Size = new System.Windows.Forms.Label();
@@ -48,7 +52,13 @@
             this.labelDisk1Used = new System.Windows.Forms.Label();
             this.BarDD1 = new System.Windows.Forms.ProgressBar();
             this.groupPC2 = new System.Windows.Forms.GroupBox();
+            this.BarCPU2 = new System.Windows.Forms.ProgressBar();
+            this.BarRAM2 = new System.Windows.Forms.ProgressBar();
+            this.labelCpu2Used = new System.Windows.Forms.Label();
+            this.labelRam2Used = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.labelRam2Size = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.labelDisk2Used = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.BarDD2 = new System.Windows.Forms.ProgressBar();
@@ -57,7 +67,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.labelDisk2Total = new System.Windows.Forms.Label();
             this.groupPC3 = new System.Windows.Forms.GroupBox();
+            this.BarCPU3 = new System.Windows.Forms.ProgressBar();
+            this.BarRAM3 = new System.Windows.Forms.ProgressBar();
+            this.labelCpu3Used = new System.Windows.Forms.Label();
+            this.labelRam3Used = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.labelRam3Size = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.labelDisk3Used = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.BarDD3 = new System.Windows.Forms.ProgressBar();
@@ -73,23 +89,10 @@
             this.groupTicketEnCours = new System.Windows.Forms.GroupBox();
             this.groupTicketsResolues = new System.Windows.Forms.GroupBox();
             this.groupProfils = new System.Windows.Forms.GroupBox();
-            this.labelRam2Used = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.labelRam3Used = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.labelCpu1Used = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.labelCpu2Used = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.labelCpu3Used = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.BarRAM1 = new System.Windows.Forms.ProgressBar();
-            this.BarCPU1 = new System.Windows.Forms.ProgressBar();
-            this.BarRAM2 = new System.Windows.Forms.ProgressBar();
-            this.BarCPU2 = new System.Windows.Forms.ProgressBar();
-            this.BarRAM3 = new System.Windows.Forms.ProgressBar();
-            this.BarCPU3 = new System.Windows.Forms.ProgressBar();
+            this.buttonTicket1 = new System.Windows.Forms.Button();
+            this.buttonTicket2 = new System.Windows.Forms.Button();
+            this.buttonTicket3 = new System.Windows.Forms.Button();
             this.groupPC1.SuspendLayout();
             this.groupPC2.SuspendLayout();
             this.groupPC3.SuspendLayout();
@@ -197,6 +200,7 @@
             // 
             // groupPC1
             // 
+            this.groupPC1.Controls.Add(this.buttonTicket1);
             this.groupPC1.Controls.Add(this.BarCPU1);
             this.groupPC1.Controls.Add(this.BarRAM1);
             this.groupPC1.Controls.Add(this.labelCpu1Used);
@@ -219,6 +223,38 @@
             this.groupPC1.TabIndex = 11;
             this.groupPC1.TabStop = false;
             this.groupPC1.Text = "PC1";
+            // 
+            // BarCPU1
+            // 
+            this.BarCPU1.Location = new System.Drawing.Point(129, 174);
+            this.BarCPU1.Name = "BarCPU1";
+            this.BarCPU1.Size = new System.Drawing.Size(165, 20);
+            this.BarCPU1.TabIndex = 20;
+            // 
+            // BarRAM1
+            // 
+            this.BarRAM1.Location = new System.Drawing.Point(129, 132);
+            this.BarRAM1.Name = "BarRAM1";
+            this.BarRAM1.Size = new System.Drawing.Size(165, 20);
+            this.BarRAM1.TabIndex = 19;
+            // 
+            // labelCpu1Used
+            // 
+            this.labelCpu1Used.AutoSize = true;
+            this.labelCpu1Used.Location = new System.Drawing.Point(88, 181);
+            this.labelCpu1Used.Name = "labelCpu1Used";
+            this.labelCpu1Used.Size = new System.Drawing.Size(10, 13);
+            this.labelCpu1Used.TabIndex = 18;
+            this.labelCpu1Used.Text = "-";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 181);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 13);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "CPU utilisée :";
             // 
             // labelRam1Used
             // 
@@ -274,6 +310,7 @@
             // 
             // groupPC2
             // 
+            this.groupPC2.Controls.Add(this.buttonTicket2);
             this.groupPC2.Controls.Add(this.BarCPU2);
             this.groupPC2.Controls.Add(this.BarRAM2);
             this.groupPC2.Controls.Add(this.labelCpu2Used);
@@ -297,6 +334,47 @@
             this.groupPC2.TabStop = false;
             this.groupPC2.Text = "PC2";
             // 
+            // BarCPU2
+            // 
+            this.BarCPU2.Location = new System.Drawing.Point(129, 174);
+            this.BarCPU2.Name = "BarCPU2";
+            this.BarCPU2.Size = new System.Drawing.Size(165, 20);
+            this.BarCPU2.TabIndex = 22;
+            // 
+            // BarRAM2
+            // 
+            this.BarRAM2.Location = new System.Drawing.Point(129, 132);
+            this.BarRAM2.Name = "BarRAM2";
+            this.BarRAM2.Size = new System.Drawing.Size(165, 20);
+            this.BarRAM2.TabIndex = 21;
+            // 
+            // labelCpu2Used
+            // 
+            this.labelCpu2Used.AutoSize = true;
+            this.labelCpu2Used.Location = new System.Drawing.Point(88, 181);
+            this.labelCpu2Used.Name = "labelCpu2Used";
+            this.labelCpu2Used.Size = new System.Drawing.Size(10, 13);
+            this.labelCpu2Used.TabIndex = 20;
+            this.labelCpu2Used.Text = "-";
+            // 
+            // labelRam2Used
+            // 
+            this.labelRam2Used.AutoSize = true;
+            this.labelRam2Used.Location = new System.Drawing.Point(88, 139);
+            this.labelRam2Used.Name = "labelRam2Used";
+            this.labelRam2Used.Size = new System.Drawing.Size(10, 13);
+            this.labelRam2Used.TabIndex = 18;
+            this.labelRam2Used.Text = "-";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 181);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(70, 13);
+            this.label15.TabIndex = 19;
+            this.label15.Text = "CPU utilisée :";
+            // 
             // labelRam2Size
             // 
             this.labelRam2Size.AutoSize = true;
@@ -305,6 +383,15 @@
             this.labelRam2Size.Size = new System.Drawing.Size(10, 13);
             this.labelRam2Size.TabIndex = 16;
             this.labelRam2Size.Text = "-";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 139);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(72, 13);
+            this.label11.TabIndex = 17;
+            this.label11.Text = "RAM utilisée :";
             // 
             // labelDisk2Used
             // 
@@ -369,6 +456,7 @@
             // 
             // groupPC3
             // 
+            this.groupPC3.Controls.Add(this.buttonTicket3);
             this.groupPC3.Controls.Add(this.BarCPU3);
             this.groupPC3.Controls.Add(this.BarRAM3);
             this.groupPC3.Controls.Add(this.labelCpu3Used);
@@ -392,6 +480,47 @@
             this.groupPC3.TabStop = false;
             this.groupPC3.Text = "PC3";
             // 
+            // BarCPU3
+            // 
+            this.BarCPU3.Location = new System.Drawing.Point(129, 174);
+            this.BarCPU3.Name = "BarCPU3";
+            this.BarCPU3.Size = new System.Drawing.Size(165, 20);
+            this.BarCPU3.TabIndex = 25;
+            // 
+            // BarRAM3
+            // 
+            this.BarRAM3.Location = new System.Drawing.Point(129, 132);
+            this.BarRAM3.Name = "BarRAM3";
+            this.BarRAM3.Size = new System.Drawing.Size(165, 20);
+            this.BarRAM3.TabIndex = 23;
+            // 
+            // labelCpu3Used
+            // 
+            this.labelCpu3Used.AutoSize = true;
+            this.labelCpu3Used.Location = new System.Drawing.Point(88, 181);
+            this.labelCpu3Used.Name = "labelCpu3Used";
+            this.labelCpu3Used.Size = new System.Drawing.Size(10, 13);
+            this.labelCpu3Used.TabIndex = 22;
+            this.labelCpu3Used.Text = "-";
+            // 
+            // labelRam3Used
+            // 
+            this.labelRam3Used.AutoSize = true;
+            this.labelRam3Used.Location = new System.Drawing.Point(88, 139);
+            this.labelRam3Used.Name = "labelRam3Used";
+            this.labelRam3Used.Size = new System.Drawing.Size(10, 13);
+            this.labelRam3Used.TabIndex = 20;
+            this.labelRam3Used.Text = "-";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 181);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(70, 13);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "CPU utilisée :";
+            // 
             // labelRam3Size
             // 
             this.labelRam3Size.AutoSize = true;
@@ -400,6 +529,15 @@
             this.labelRam3Size.Size = new System.Drawing.Size(10, 13);
             this.labelRam3Size.TabIndex = 20;
             this.labelRam3Size.Text = "-";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 139);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(72, 13);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "RAM utilisée :";
             // 
             // labelDisk3Used
             // 
@@ -541,143 +679,41 @@
             this.groupProfils.TabStop = false;
             this.groupProfils.Text = "Profils";
             // 
-            // labelRam2Used
-            // 
-            this.labelRam2Used.AutoSize = true;
-            this.labelRam2Used.Location = new System.Drawing.Point(88, 139);
-            this.labelRam2Used.Name = "labelRam2Used";
-            this.labelRam2Used.Size = new System.Drawing.Size(10, 13);
-            this.labelRam2Used.TabIndex = 18;
-            this.labelRam2Used.Text = "-";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(6, 139);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(72, 13);
-            this.label11.TabIndex = 17;
-            this.label11.Text = "RAM utilisée :";
-            // 
-            // labelRam3Used
-            // 
-            this.labelRam3Used.AutoSize = true;
-            this.labelRam3Used.Location = new System.Drawing.Point(88, 139);
-            this.labelRam3Used.Name = "labelRam3Used";
-            this.labelRam3Used.Size = new System.Drawing.Size(10, 13);
-            this.labelRam3Used.TabIndex = 20;
-            this.labelRam3Used.Text = "-";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 139);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 13);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "RAM utilisée :";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // labelCpu1Used
+            // buttonTicket1
             // 
-            this.labelCpu1Used.AutoSize = true;
-            this.labelCpu1Used.Location = new System.Drawing.Point(88, 181);
-            this.labelCpu1Used.Name = "labelCpu1Used";
-            this.labelCpu1Used.Size = new System.Drawing.Size(10, 13);
-            this.labelCpu1Used.TabIndex = 18;
-            this.labelCpu1Used.Text = "-";
+            this.buttonTicket1.Location = new System.Drawing.Point(4, 317);
+            this.buttonTicket1.Name = "buttonTicket1";
+            this.buttonTicket1.Size = new System.Drawing.Size(110, 23);
+            this.buttonTicket1.TabIndex = 21;
+            this.buttonTicket1.Text = "Envoyer un ticket";
+            this.buttonTicket1.UseVisualStyleBackColor = true;
+            this.buttonTicket1.Click += new System.EventHandler(this.buttonTicket1_Click);
             // 
-            // label13
+            // buttonTicket2
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 181);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(70, 13);
-            this.label13.TabIndex = 17;
-            this.label13.Text = "CPU utilisée :";
+            this.buttonTicket2.Location = new System.Drawing.Point(6, 317);
+            this.buttonTicket2.Name = "buttonTicket2";
+            this.buttonTicket2.Size = new System.Drawing.Size(110, 23);
+            this.buttonTicket2.TabIndex = 22;
+            this.buttonTicket2.Text = "Envoyer un ticket";
+            this.buttonTicket2.UseVisualStyleBackColor = true;
+            this.buttonTicket2.Click += new System.EventHandler(this.buttonTicket2_Click);
             // 
-            // labelCpu2Used
+            // buttonTicket3
             // 
-            this.labelCpu2Used.AutoSize = true;
-            this.labelCpu2Used.Location = new System.Drawing.Point(88, 181);
-            this.labelCpu2Used.Name = "labelCpu2Used";
-            this.labelCpu2Used.Size = new System.Drawing.Size(10, 13);
-            this.labelCpu2Used.TabIndex = 20;
-            this.labelCpu2Used.Text = "-";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 181);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 13);
-            this.label15.TabIndex = 19;
-            this.label15.Text = "CPU utilisée :";
-            // 
-            // labelCpu3Used
-            // 
-            this.labelCpu3Used.AutoSize = true;
-            this.labelCpu3Used.Location = new System.Drawing.Point(88, 181);
-            this.labelCpu3Used.Name = "labelCpu3Used";
-            this.labelCpu3Used.Size = new System.Drawing.Size(10, 13);
-            this.labelCpu3Used.TabIndex = 22;
-            this.labelCpu3Used.Text = "-";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 181);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(70, 13);
-            this.label17.TabIndex = 21;
-            this.label17.Text = "CPU utilisée :";
-            // 
-            // BarRAM1
-            // 
-            this.BarRAM1.Location = new System.Drawing.Point(129, 132);
-            this.BarRAM1.Name = "BarRAM1";
-            this.BarRAM1.Size = new System.Drawing.Size(165, 20);
-            this.BarRAM1.TabIndex = 19;
-            // 
-            // BarCPU1
-            // 
-            this.BarCPU1.Location = new System.Drawing.Point(129, 174);
-            this.BarCPU1.Name = "BarCPU1";
-            this.BarCPU1.Size = new System.Drawing.Size(165, 20);
-            this.BarCPU1.TabIndex = 20;
-            // 
-            // BarRAM2
-            // 
-            this.BarRAM2.Location = new System.Drawing.Point(129, 132);
-            this.BarRAM2.Name = "BarRAM2";
-            this.BarRAM2.Size = new System.Drawing.Size(165, 20);
-            this.BarRAM2.TabIndex = 21;
-            // 
-            // BarCPU2
-            // 
-            this.BarCPU2.Location = new System.Drawing.Point(129, 174);
-            this.BarCPU2.Name = "BarCPU2";
-            this.BarCPU2.Size = new System.Drawing.Size(165, 20);
-            this.BarCPU2.TabIndex = 22;
-            // 
-            // BarRAM3
-            // 
-            this.BarRAM3.Location = new System.Drawing.Point(129, 132);
-            this.BarRAM3.Name = "BarRAM3";
-            this.BarRAM3.Size = new System.Drawing.Size(165, 20);
-            this.BarRAM3.TabIndex = 23;
-            // 
-            // BarCPU3
-            // 
-            this.BarCPU3.Location = new System.Drawing.Point(129, 174);
-            this.BarCPU3.Name = "BarCPU3";
-            this.BarCPU3.Size = new System.Drawing.Size(165, 20);
-            this.BarCPU3.TabIndex = 25;
+            this.buttonTicket3.Location = new System.Drawing.Point(6, 317);
+            this.buttonTicket3.Name = "buttonTicket3";
+            this.buttonTicket3.Size = new System.Drawing.Size(110, 23);
+            this.buttonTicket3.TabIndex = 23;
+            this.buttonTicket3.Text = "Envoyer un ticket";
+            this.buttonTicket3.UseVisualStyleBackColor = true;
+            this.buttonTicket3.Click += new System.EventHandler(this.buttonTicket3_Click);
             // 
             // MainForm
             // 
@@ -772,5 +808,8 @@
         private System.Windows.Forms.ProgressBar BarRAM2;
         private System.Windows.Forms.ProgressBar BarCPU3;
         private System.Windows.Forms.ProgressBar BarRAM3;
+        private System.Windows.Forms.Button buttonTicket1;
+        private System.Windows.Forms.Button buttonTicket2;
+        private System.Windows.Forms.Button buttonTicket3;
     }
 }
