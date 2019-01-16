@@ -86,6 +86,8 @@ namespace ProjetIntegrationInformatique
             }
         }
 
+        #region IHM
+
         private void IHMload()
         {
             this.Text = "Supervisator 2001 - " + Data.utilisateur;
@@ -120,6 +122,7 @@ namespace ProjetIntegrationInformatique
                 DiskScan(Data.LoadPC1, Data.LoadPC2, Data.LoadPC3);
                 RamScan(Data.LoadPC1, Data.LoadPC2, Data.LoadPC3);
                 CpuScan(Data.LoadPC1, Data.LoadPC2, Data.LoadPC3);
+                AppScan(Data.LoadPC1, Data.LoadPC2, Data.LoadPC3);
                 groupPC1.Text = "PC1 - Online";
                 groupPC2.Text = "PC2 - Online";
                 groupPC3.Text = "PC3 - Online";
@@ -147,6 +150,77 @@ namespace ProjetIntegrationInformatique
                 groupProfils.Visible = true;
             }
         }
+
+        private void offlineIHM(bool PC1, bool PC2, bool PC3)
+        {
+            if (PC1)
+            {
+                BarDD1.Maximum = 100;
+                BarDD1.Value = 0;
+                labelDisk1Remain.Text = "-";
+                labelDisk1Total.Text = "-";
+                labelDisk1Used.Text = "Espace occupé (--%) :";
+
+                labelRam1Size.Text = "-";
+                labelRam1Used.Text = "--%";
+                BarRAM1.Value = 0;
+
+                labelCpu1Used.Text = "--%";
+                BarCPU1.Value = 0;
+
+                groupPC1.Text = "PC1 - Offline";
+
+                labelApp1.Text = "N.C.";
+                buttonShowStatut1.BackColor = System.Drawing.Color.Ivory;
+            }
+
+            if (PC2)
+            {
+                BarDD2.Maximum = 100;
+                BarDD2.Value = 0;
+                labelDisk2Remain.Text = "-";
+                labelDisk2Total.Text = "-";
+                labelDisk2Used.Text = "Espace occupé (--%) :";
+
+                labelRam2Size.Text = "-";
+                labelRam2Used.Text = "--%";
+                BarRAM2.Value = 0;
+
+                labelCpu2Used.Text = "--%";
+                BarCPU2.Value = 0;
+
+                groupPC2.Text = "PC2 - Offline";
+
+                labelApp2.Text = "N.C.";
+                buttonShowStatut2.BackColor = System.Drawing.Color.Ivory;
+            }
+
+            if (PC3)
+            {
+                BarDD3.Maximum = 100;
+                BarDD3.Value = 0;
+                labelDisk3Remain.Text = "-";
+                labelDisk3Total.Text = "-";
+                labelDisk3Used.Text = "Espace occupé (--%) :";
+
+                labelRam3Size.Text = "-";
+                labelRam3Used.Text = "--%";
+                BarRAM3.Value = 0;
+
+                labelCpu3Used.Text = "--%";
+                BarCPU3.Value = 0;
+
+                groupPC3.Text = "PC3 - Offline";
+
+                labelApp3.Text = "N.C.";
+                buttonShowStatut3.BackColor = System.Drawing.Color.Ivory;
+            }
+
+        }
+
+        #endregion
+
+        #region Scan
 
         private void DiskScan(bool PC1, bool PC2, bool PC3)
         {
@@ -391,6 +465,94 @@ namespace ProjetIntegrationInformatique
             }
         }
 
+        private void AppScan(bool PC1, bool PC2, bool PC3)
+        {
+            Boolean isOn = false;
+            var password = new SecureString();
+            foreach (char c in Data.rudepassword)
+            {
+                password.AppendChar(c);
+            }
+            CimCredential Credentials = new CimCredential(PasswordAuthenticationMechanism.Default, Data.domain, Data.username, password);
+
+            WSManSessionOptions SessionOptions = new WSManSessionOptions();
+            SessionOptions.AddDestinationCredentials(Credentials);
+            if (PC1)
+            {
+                try
+                {
+                    CimSession Session1 = CimSession.Create(Data.computer1, SessionOptions);
+                    var allApp1 = Session1.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_Process");
+                    isOn = false;
+                    foreach (CimInstance oneApp1 in allApp1)
+                    {
+                        if (oneApp1.CimInstanceProperties["Name"].ToString() == "Name = \"VerificationSupervision.exe\"")
+                        {
+                            labelApp1.Text = "Online";
+                            buttonShowStatut1.BackColor = System.Drawing.Color.Lime;
+                            isOn = true;
+                        }
+                    }
+                    if (!isOn)
+                    {
+                        labelApp1.Text = "Offline";
+                        buttonShowStatut1.BackColor = System.Drawing.Color.DarkRed;
+                    }
+                }
+                catch { Data.LoadPC1 = false; }
+            }
+
+            if (PC2)
+            {
+                try
+                {
+                    CimSession Session2 = CimSession.Create(Data.computer2, SessionOptions);
+                    var allApp2 = Session2.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_Process");
+                    isOn = false;
+                    foreach (CimInstance oneApp2 in allApp2)
+                    {
+                        if (oneApp2.CimInstanceProperties["Name"].ToString() == "Name = \"VerificationSupervision.exe\"")
+                        {
+                            labelApp2.Text = "Online";
+                            buttonShowStatut2.BackColor = System.Drawing.Color.Lime;
+                            isOn = true;
+                        }
+                    }
+                    if (!isOn)
+                    {
+                        labelApp2.Text = "Offline";
+                        buttonShowStatut2.BackColor = System.Drawing.Color.DarkRed;
+                    }
+                }
+                catch { Data.LoadPC2 = false; }
+            }
+
+            if (PC3)
+            {
+                try
+                {
+                    CimSession Session3 = CimSession.Create(Data.computer3, SessionOptions);
+                    var allApp3 = Session3.QueryInstances(@"root\cimv2", "WQL", "SELECT * FROM Win32_Process");
+                    isOn = false;
+                    foreach (CimInstance oneApp3 in allApp3)
+                    {
+                        if (oneApp3.CimInstanceProperties["Name"].ToString() == "Name = \"VerificationSupervision.exe\"")
+                        {
+                            labelApp3.Text = "Online";
+                            buttonShowStatut3.BackColor = System.Drawing.Color.Lime;
+                            isOn = true;
+                        }
+                    }
+                    if (!isOn)
+                    {
+                        labelApp3.Text = "Offline";
+                        buttonShowStatut3.BackColor = System.Drawing.Color.DarkRed;
+                    }
+                }
+                catch { Data.LoadPC3 = false; }
+            }
+        }
+
         private void OnlineScan(bool PC1, bool PC2, bool PC3)
         {
             Thread t;
@@ -467,63 +629,9 @@ namespace ProjetIntegrationInformatique
             }
         }
 
-        private void offlineIHM(bool PC1, bool PC2, bool PC3)
-        {
-            if(PC1)
-            {
-                BarDD1.Maximum = 100;
-                BarDD1.Value = 0;
-                labelDisk1Remain.Text = "-";
-                labelDisk1Total.Text = "-";
-                labelDisk1Used.Text = "Espace occupé (--%) :";
+        #endregion
 
-                labelRam1Size.Text = "-";
-                labelRam1Used.Text = "--%";
-                BarRAM1.Value = 0;
-
-                labelCpu1Used.Text = "--%";
-                BarCPU1.Value = 0;
-
-                groupPC1.Text = "PC1 - Offline";
-            }
-
-            if (PC2)
-            {
-                BarDD2.Maximum = 100;
-                BarDD2.Value = 0;
-                labelDisk2Remain.Text = "-";
-                labelDisk2Total.Text = "-";
-                labelDisk2Used.Text = "Espace occupé (--%) :";
-
-                labelRam2Size.Text = "-";
-                labelRam2Used.Text = "--%";
-                BarRAM2.Value = 0;
-
-                labelCpu2Used.Text = "--%";
-                BarCPU2.Value = 0;
-
-                groupPC2.Text = "PC2 - Offline";
-            }
-
-            if (PC3)
-            {
-                BarDD3.Maximum = 100;
-                BarDD3.Value = 0;
-                labelDisk3Remain.Text = "-";
-                labelDisk3Total.Text = "-";
-                labelDisk3Used.Text = "Espace occupé (--%) :";
-
-                labelRam3Size.Text = "-";
-                labelRam3Used.Text = "--%";
-                BarRAM3.Value = 0;
-
-                labelCpu3Used.Text = "--%";
-                BarCPU3.Value = 0;
-
-                groupPC3.Text = "PC3 - Offline";
-            }
-
-        }
+        #region Bouttons
 
         private void buttonLog1_Click(object sender, EventArgs e)
         {
@@ -578,7 +686,7 @@ namespace ProjetIntegrationInformatique
                 labelError3.Visible = true;
             }
         }
-        
+
         private void ButtonEquipement_Click(object sender, EventArgs e)
         {
             Data.page = 1;
@@ -620,7 +728,7 @@ namespace ProjetIntegrationInformatique
             AjoutTicket askTicket = new AjoutTicket(2, Data.utilisateur);
             if (askTicket.ShowDialog(this) == DialogResult.OK)
             {
-                new ticket(askTicket.TextTicket.Text, 2, 0, DateTime.Now,0);
+                new ticket(askTicket.TextTicket.Text, 2, 0, DateTime.Now, 0);
             }
             askTicket.Dispose();
             timer1.Start();
@@ -632,10 +740,13 @@ namespace ProjetIntegrationInformatique
             AjoutTicket askTicket = new AjoutTicket(3, Data.utilisateur);
             if (askTicket.ShowDialog(this) == DialogResult.OK)
             {
-                new ticket(askTicket.TextTicket.Text, 3, 0, DateTime.Now,0);
+                new ticket(askTicket.TextTicket.Text, 3, 0, DateTime.Now, 0);
             }
             askTicket.Dispose();
             timer1.Start();
         }
+
+        #endregion
+        
     }
 }

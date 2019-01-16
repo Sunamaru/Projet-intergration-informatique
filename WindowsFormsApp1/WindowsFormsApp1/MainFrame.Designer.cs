@@ -41,6 +41,7 @@
             this.labelDisk1Remain = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupPC1 = new System.Windows.Forms.GroupBox();
+            this.buttonTicket1 = new System.Windows.Forms.Button();
             this.BarCPU1 = new System.Windows.Forms.ProgressBar();
             this.BarRAM1 = new System.Windows.Forms.ProgressBar();
             this.labelCpu1Used = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             this.labelDisk1Used = new System.Windows.Forms.Label();
             this.BarDD1 = new System.Windows.Forms.ProgressBar();
             this.groupPC2 = new System.Windows.Forms.GroupBox();
+            this.buttonTicket2 = new System.Windows.Forms.Button();
             this.BarCPU2 = new System.Windows.Forms.ProgressBar();
             this.BarRAM2 = new System.Windows.Forms.ProgressBar();
             this.labelCpu2Used = new System.Windows.Forms.Label();
@@ -67,6 +69,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.labelDisk2Total = new System.Windows.Forms.Label();
             this.groupPC3 = new System.Windows.Forms.GroupBox();
+            this.buttonTicket3 = new System.Windows.Forms.Button();
             this.BarCPU3 = new System.Windows.Forms.ProgressBar();
             this.BarRAM3 = new System.Windows.Forms.ProgressBar();
             this.labelCpu3Used = new System.Windows.Forms.Label();
@@ -90,9 +93,15 @@
             this.groupTicketsResolues = new System.Windows.Forms.GroupBox();
             this.groupProfils = new System.Windows.Forms.GroupBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.buttonTicket1 = new System.Windows.Forms.Button();
-            this.buttonTicket2 = new System.Windows.Forms.Button();
-            this.buttonTicket3 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelApp1 = new System.Windows.Forms.Label();
+            this.labelApp2 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.labelApp3 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.buttonShowStatut1 = new System.Windows.Forms.Button();
+            this.buttonShowStatut2 = new System.Windows.Forms.Button();
+            this.buttonShowStatut3 = new System.Windows.Forms.Button();
             this.groupPC1.SuspendLayout();
             this.groupPC2.SuspendLayout();
             this.groupPC3.SuspendLayout();
@@ -200,6 +209,9 @@
             // 
             // groupPC1
             // 
+            this.groupPC1.Controls.Add(this.buttonShowStatut1);
+            this.groupPC1.Controls.Add(this.labelApp1);
+            this.groupPC1.Controls.Add(this.label5);
             this.groupPC1.Controls.Add(this.buttonTicket1);
             this.groupPC1.Controls.Add(this.BarCPU1);
             this.groupPC1.Controls.Add(this.BarRAM1);
@@ -223,6 +235,16 @@
             this.groupPC1.TabIndex = 11;
             this.groupPC1.TabStop = false;
             this.groupPC1.Text = "PC1";
+            // 
+            // buttonTicket1
+            // 
+            this.buttonTicket1.Location = new System.Drawing.Point(4, 317);
+            this.buttonTicket1.Name = "buttonTicket1";
+            this.buttonTicket1.Size = new System.Drawing.Size(110, 23);
+            this.buttonTicket1.TabIndex = 21;
+            this.buttonTicket1.Text = "Envoyer un ticket";
+            this.buttonTicket1.UseVisualStyleBackColor = true;
+            this.buttonTicket1.Click += new System.EventHandler(this.buttonTicket1_Click);
             // 
             // BarCPU1
             // 
@@ -310,7 +332,10 @@
             // 
             // groupPC2
             // 
+            this.groupPC2.Controls.Add(this.buttonShowStatut2);
+            this.groupPC2.Controls.Add(this.labelApp2);
             this.groupPC2.Controls.Add(this.buttonTicket2);
+            this.groupPC2.Controls.Add(this.label18);
             this.groupPC2.Controls.Add(this.BarCPU2);
             this.groupPC2.Controls.Add(this.BarRAM2);
             this.groupPC2.Controls.Add(this.labelCpu2Used);
@@ -333,6 +358,16 @@
             this.groupPC2.TabIndex = 12;
             this.groupPC2.TabStop = false;
             this.groupPC2.Text = "PC2";
+            // 
+            // buttonTicket2
+            // 
+            this.buttonTicket2.Location = new System.Drawing.Point(6, 317);
+            this.buttonTicket2.Name = "buttonTicket2";
+            this.buttonTicket2.Size = new System.Drawing.Size(110, 23);
+            this.buttonTicket2.TabIndex = 22;
+            this.buttonTicket2.Text = "Envoyer un ticket";
+            this.buttonTicket2.UseVisualStyleBackColor = true;
+            this.buttonTicket2.Click += new System.EventHandler(this.buttonTicket2_Click);
             // 
             // BarCPU2
             // 
@@ -456,7 +491,10 @@
             // 
             // groupPC3
             // 
+            this.groupPC3.Controls.Add(this.buttonShowStatut3);
+            this.groupPC3.Controls.Add(this.labelApp3);
             this.groupPC3.Controls.Add(this.buttonTicket3);
+            this.groupPC3.Controls.Add(this.label20);
             this.groupPC3.Controls.Add(this.BarCPU3);
             this.groupPC3.Controls.Add(this.BarRAM3);
             this.groupPC3.Controls.Add(this.labelCpu3Used);
@@ -479,6 +517,16 @@
             this.groupPC3.TabIndex = 12;
             this.groupPC3.TabStop = false;
             this.groupPC3.Text = "PC3";
+            // 
+            // buttonTicket3
+            // 
+            this.buttonTicket3.Location = new System.Drawing.Point(6, 317);
+            this.buttonTicket3.Name = "buttonTicket3";
+            this.buttonTicket3.Size = new System.Drawing.Size(110, 23);
+            this.buttonTicket3.TabIndex = 23;
+            this.buttonTicket3.Text = "Envoyer un ticket";
+            this.buttonTicket3.UseVisualStyleBackColor = true;
+            this.buttonTicket3.Click += new System.EventHandler(this.buttonTicket3_Click);
             // 
             // BarCPU3
             // 
@@ -685,35 +733,89 @@
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // buttonTicket1
+            // label5
             // 
-            this.buttonTicket1.Location = new System.Drawing.Point(4, 317);
-            this.buttonTicket1.Name = "buttonTicket1";
-            this.buttonTicket1.Size = new System.Drawing.Size(110, 23);
-            this.buttonTicket1.TabIndex = 21;
-            this.buttonTicket1.Text = "Envoyer un ticket";
-            this.buttonTicket1.UseVisualStyleBackColor = true;
-            this.buttonTicket1.Click += new System.EventHandler(this.buttonTicket1_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 270);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 13);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Statut du Programme :";
             // 
-            // buttonTicket2
+            // labelApp1
             // 
-            this.buttonTicket2.Location = new System.Drawing.Point(6, 317);
-            this.buttonTicket2.Name = "buttonTicket2";
-            this.buttonTicket2.Size = new System.Drawing.Size(110, 23);
-            this.buttonTicket2.TabIndex = 22;
-            this.buttonTicket2.Text = "Envoyer un ticket";
-            this.buttonTicket2.UseVisualStyleBackColor = true;
-            this.buttonTicket2.Click += new System.EventHandler(this.buttonTicket2_Click);
+            this.labelApp1.AutoSize = true;
+            this.labelApp1.Location = new System.Drawing.Point(125, 270);
+            this.labelApp1.Name = "labelApp1";
+            this.labelApp1.Size = new System.Drawing.Size(37, 13);
+            this.labelApp1.TabIndex = 23;
+            this.labelApp1.Text = "Offline";
             // 
-            // buttonTicket3
+            // labelApp2
             // 
-            this.buttonTicket3.Location = new System.Drawing.Point(6, 317);
-            this.buttonTicket3.Name = "buttonTicket3";
-            this.buttonTicket3.Size = new System.Drawing.Size(110, 23);
-            this.buttonTicket3.TabIndex = 23;
-            this.buttonTicket3.Text = "Envoyer un ticket";
-            this.buttonTicket3.UseVisualStyleBackColor = true;
-            this.buttonTicket3.Click += new System.EventHandler(this.buttonTicket3_Click);
+            this.labelApp2.AutoSize = true;
+            this.labelApp2.Location = new System.Drawing.Point(125, 270);
+            this.labelApp2.Name = "labelApp2";
+            this.labelApp2.Size = new System.Drawing.Size(37, 13);
+            this.labelApp2.TabIndex = 25;
+            this.labelApp2.Text = "Offline";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 270);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(112, 13);
+            this.label18.TabIndex = 24;
+            this.label18.Text = "Statut du Programme :";
+            // 
+            // labelApp3
+            // 
+            this.labelApp3.AutoSize = true;
+            this.labelApp3.Location = new System.Drawing.Point(125, 270);
+            this.labelApp3.Name = "labelApp3";
+            this.labelApp3.Size = new System.Drawing.Size(37, 13);
+            this.labelApp3.TabIndex = 27;
+            this.labelApp3.Text = "Offline";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 270);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(112, 13);
+            this.label20.TabIndex = 26;
+            this.label20.Text = "Statut du Programme :";
+            // 
+            // buttonShowStatut1
+            // 
+            this.buttonShowStatut1.BackColor = System.Drawing.Color.DarkRed;
+            this.buttonShowStatut1.Enabled = false;
+            this.buttonShowStatut1.Location = new System.Drawing.Point(168, 265);
+            this.buttonShowStatut1.Name = "buttonShowStatut1";
+            this.buttonShowStatut1.Size = new System.Drawing.Size(22, 23);
+            this.buttonShowStatut1.TabIndex = 24;
+            this.buttonShowStatut1.UseVisualStyleBackColor = false;
+            // 
+            // buttonShowStatut2
+            // 
+            this.buttonShowStatut2.BackColor = System.Drawing.Color.DarkRed;
+            this.buttonShowStatut2.Enabled = false;
+            this.buttonShowStatut2.Location = new System.Drawing.Point(168, 265);
+            this.buttonShowStatut2.Name = "buttonShowStatut2";
+            this.buttonShowStatut2.Size = new System.Drawing.Size(22, 23);
+            this.buttonShowStatut2.TabIndex = 25;
+            this.buttonShowStatut2.UseVisualStyleBackColor = false;
+            // 
+            // buttonShowStatut3
+            // 
+            this.buttonShowStatut3.BackColor = System.Drawing.Color.DarkRed;
+            this.buttonShowStatut3.Enabled = false;
+            this.buttonShowStatut3.Location = new System.Drawing.Point(168, 265);
+            this.buttonShowStatut3.Name = "buttonShowStatut3";
+            this.buttonShowStatut3.Size = new System.Drawing.Size(22, 23);
+            this.buttonShowStatut3.TabIndex = 26;
+            this.buttonShowStatut3.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 
@@ -811,5 +913,14 @@
         private System.Windows.Forms.Button buttonTicket1;
         private System.Windows.Forms.Button buttonTicket2;
         private System.Windows.Forms.Button buttonTicket3;
+        private System.Windows.Forms.Label labelApp1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelApp2;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label labelApp3;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button buttonShowStatut1;
+        private System.Windows.Forms.Button buttonShowStatut2;
+        private System.Windows.Forms.Button buttonShowStatut3;
     }
 }
